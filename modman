@@ -1,0 +1,3 @@
+app/code/community/Magenifest/Countdownwidget app/code/community/Magenifest/Countdownwidget
+app/etc/modules/Magenifest_Countdownwidget.xml app/etc/modules/Magenifest_Countdownwidget.xml
+lib/Magenifest/Countdown/GIFEncoder.class.php lib/Magenifest/Countdown/GIFEncoder.class.php
