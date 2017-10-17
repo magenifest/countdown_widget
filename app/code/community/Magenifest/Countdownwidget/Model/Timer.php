@@ -50,12 +50,15 @@ class Magenifest_Countdownwidget_Model_Timer {
         if (!$timerWidgetData) {
             return false;
         }
+        try {
+            $gifData = $this->_generateTimerGif($timerWidgetData);
+            Mage::app()->saveCache($gifData, $timerCacheKey, array('magenifest_timer_cache'), 60);
+            return $gifData;
+        } catch (Exception $e) {
+            Mage::logException($e);
+        }
 
-        $gifData = $this->_generateTimerGif($timerWidgetData);
-
-        Mage::app()->saveCache($gifData, $timerCacheKey , array('magenifest_timer_cache'), 60);
-
-        return $gifData;
+        return false;
     }
 
     /**
@@ -95,7 +98,7 @@ class Magenifest_Countdownwidget_Model_Timer {
             'angle' => 0, // Angle of the text
             'x-offset' => $offsetX, // The larger the number the further the distance from the left hand side, 0 to align to the left.
             'y-offset' => $timerWidgetData['y_offset'], // The vertical alignment, trial and error between 20 and 60.
-            'file' => Mage::getBaseDir('media') .  '/wysiwyg/EDM_Fonts/SFMono-Regular.otf', // Font path
+            'file' => Mage::getBaseDir('media') .  DS . $timerWidgetData['font_path'], // Font path
             'color' => imagecolorallocate($image, $timerWidgetData['color_r'], $timerWidgetData['color_g'], $timerWidgetData['color_b']), // RGB Colour of the text
         );
         for($i = 0; $i <= 60; $i++){
@@ -121,10 +124,7 @@ class Magenifest_Countdownwidget_Model_Timer {
             } else {
                 // Open the first source image and add the text.
                 $image = imagecreatefrompng($background);
-                $days = (int)$interval->format('%d');
-                $hours = (int)$interval->format('%H');
-                $hours = $hours + $days * 24;
-                $hours = (string)$hours;
+                $hours = (string)$interval->format('%H');
                 $this->imagettftextSp($image, $font['size'], $font['angle'], $font['x-offset'], $font['y-offset'], $font['color'], $font['file'], $hours, 45);
                 $text = $interval->format('%I');
                 $this->imagettftextSp($image, $font['size'], $font['angle'], $font['x-offset']+230, $font['y-offset'], $font['color'], $font['file'], $text, 40);

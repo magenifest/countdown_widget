@@ -35,21 +35,29 @@
 				<label>Countdown to</label>
 				<type>magenifest_countdownwidget/widget_form_renderer_date</type>
 				<required>1</required>
-				<sort_order>24</sort_order>
+				<sort_order>30</sort_order>
 				<description><![CDATA[Enter a future date]]></description>
 			</end_date>
+			<font_path>
+				<visible>1</visible>
+				<label>Path to font file</label>
+				<type>text</type>
+				<sort_order>40</sort_order>
+				<description><![CDATA[relative path to font file (manually upload to media folder]]></description>
+				<required>1</required>
+			</font_path>
 			<background_image>
 				<label>Background Image</label>
 				<required>1</required>
 				<visible>1</visible>
 				<type>widgetimagechooser/chooser</type>
-				<sort_order>30</sort_order>
+				<sort_order>50</sort_order>
 			</background_image>
 			<font_size translate="label" module="magenifest_coundownwidget">
 				<visible>1</visible>
 				<label>Font Size</label>
 				<type>text</type>
-				<sort_order>40</sort_order>
+				<sort_order>60</sort_order>
 				<description><![CDATA[Font size in pts]]></description>
 				<required>1</required>
 			</font_size>
@@ -57,7 +65,7 @@
 				<visible>1</visible>
 				<label>X Offset</label>
 				<type>text</type>
-				<sort_order>50</sort_order>
+				<sort_order>70</sort_order>
 				<description><![CDATA[The larger the number the further the distance from the left hand side, 0 to align to the left.]]></description>
 				<required>1</required>
 			</x_offset>
@@ -65,7 +73,7 @@
 				<visible>1</visible>
 				<label>Y Offset</label>
 				<type>text</type>
-				<sort_order>60</sort_order>
+				<sort_order>80</sort_order>
 				<description><![CDATA[The vertical alignment, trial and error between 20 and 60.]]></description>
 				<required>1</required>
 			</y_offset>
@@ -73,7 +81,7 @@
 				<visible>1</visible>
 				<label>Color Red</label>
 				<type>text</type>
-				<sort_order>70</sort_order>
+				<sort_order>90</sort_order>
 				<description><![CDATA[RGB code - RED]]></description>
 				<required>1</required>
 			</color_r>
@@ -81,7 +89,7 @@
 				<visible>1</visible>
 				<label>Color Green</label>
 				<type>text</type>
-				<sort_order>80</sort_order>
+				<sort_order>100</sort_order>
 				<description><![CDATA[RGB code - Green]]></description>
 				<required>1</required>
 			</color_g>
@@ -89,7 +97,7 @@
 				<visible>1</visible>
 				<label>Color Blue</label>
 				<type>text</type>
-				<sort_order>90</sort_order>
+				<sort_order>110</sort_order>
 				<description><![CDATA[RGB code - Blue]]></description>
 				<required>1</required>
 			</color_b>
