@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<widgets>
+	<!-- Widget facebook -->
+	<magenifest_countdown_timer type="magenifest_countdownwidget/timer">
+		<name>Countdown Timer</name>
+		<description>Facebook Widget</description>
+		<parameters>
+			<active translate="label" module="magenifest_coundownwidget">
+				<label>Is active</label>
+				<visible>1</visible>
+				<type>select</type>
+				<values>
+					<no translate="label">
+						<label>No</label>
+						<value>false</value>
+					</no>
+					<yes translate="label">
+						<label>Yes</label>
+						<value>true</value>
+					</yes>
+				</values>
+				<value>false</value>
+				<required>1</required>
+				<sort_order>10</sort_order>
+			</active>
+			<code translate="label" module="core">
+				<visible>1</visible>
+				<label>Unique code</label>
+				<type>text</type>
+				<sort_order>20</sort_order>
+				<description><![CDATA[If duplicate only first one will be selected]]></description>
+			</code>
+			<end_date>
+				<visible>1</visible>
+				<label>Countdown to</label>
+				<type>magenifest_countdownwidget/widget_form_renderer_date</type>
+				<required>1</required>
+				<sort_order>24</sort_order>
+				<description><![CDATA[Enter a future date]]></description>
+			</end_date>
+			<background_image>
+				<label>Background Image</label>
+				<required>1</required>
+				<visible>1</visible>
+				<type>widgetimagechooser/chooser</type>
+				<sort_order>30</sort_order>
+			</background_image>
+			<font_size translate="label" module="magenifest_coundownwidget">
+				<visible>1</visible>
+				<label>Font Size</label>
+				<type>text</type>
+				<sort_order>40</sort_order>
+				<description><![CDATA[Font size in pts]]></description>
+				<required>1</required>
+			</font_size>
+			<x_offset>
+				<visible>1</visible>
+				<label>X Offset</label>
+				<type>text</type>
+				<sort_order>50</sort_order>
+				<description><![CDATA[The larger the number the further the distance from the left hand side, 0 to align to the left.]]></description>
+				<required>1</required>
+			</x_offset>
+			<y_offset>
+				<visible>1</visible>
+				<label>Y Offset</label>
+				<type>text</type>
+				<sort_order>60</sort_order>
+				<description><![CDATA[The vertical alignment, trial and error between 20 and 60.]]></description>
+				<required>1</required>
+			</y_offset>
+			<color_r>
+				<visible>1</visible>
+				<label>Color Red</label>
+				<type>text</type>
+				<sort_order>70</sort_order>
+				<description><![CDATA[RGB code - RED]]></description>
+				<required>1</required>
+			</color_r>
+			<color_g>
+				<visible>1</visible>
+				<label>Color Green</label>
+				<type>text</type>
+				<sort_order>80</sort_order>
+				<description><![CDATA[RGB code - Green]]></description>
+				<required>1</required>
+			</color_g>
+			<color_b>
+				<visible>1</visible>
+				<label>Color Blue</label>
+				<type>text</type>
+				<sort_order>90</sort_order>
+				<description><![CDATA[RGB code - Blue]]></description>
+				<required>1</required>
+			</color_b>
+		</parameters>
+	</magenifest_countdown_timer>
+</widgets>
